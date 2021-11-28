@@ -1,16 +1,16 @@
 from words import get_word , save_words , is_exists , FuckTheString
-from google_trans_new import google_translator
+from googletrans import Translator
 import os,time,cv2,random
-from instabot import Bot
+from botapi import Bot
 
 class InstaBot(object):
 	def CreatePicture(self,word,name=None,main=None):
 		img = cv2.imread(main,cv2.IMREAD_UNCHANGED)
 
-		WORD = google_translator().translate(word,lang_tgt='tr')
+		WORD = Translator().translate(word,dest='tr').text
 		wordnorm = FuckTheString(WORD.lower())
 
-		wordtr = f"( {wordnorm})"
+		wordtr = f"( {wordnorm} )"
 
 		textsize = cv2.getTextSize(word, cv2.FONT_HERSHEY_SIMPLEX, 1.2, 4)[0]
 		textsize1 = cv2.getTextSize(wordtr, cv2.FONT_HERSHEY_SIMPLEX, 1.2, 4)[0]
@@ -48,5 +48,5 @@ class InstaBot(object):
 
 					try:
 						self.CreatePicture(word,f"{i}{name}",main)
-					except:
-						pass
+					except Exception as hata:
+						print(str(word) + " : " + str(hata))
