@@ -1,7 +1,7 @@
 from words import get_word , save_words , is_exists , FuckTheString
 from googletrans import Translator
 import os,time,cv2,random
-from botapi import Bot
+from instabot import Bot
 
 class InstaBot(object):
 	def CreatePicture(self,word,name=None,main=None):
