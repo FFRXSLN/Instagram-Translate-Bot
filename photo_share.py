@@ -1,5 +1,5 @@
 from words import all_tags , File_ , RemoveDelFiles
-from botapi import Bot
+from instabot import Bot
 from sharepost import InstaBot
 import os
 
