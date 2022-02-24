@@ -32,7 +32,7 @@ class InstaBot(object):
 
 	def Create_Words_With_Picture(self,name,time : int):
 		global is_exists,get_word
-		MAIN_photos = ["main.png","main1.png"]
+		MAIN_photos = ["main1.png"]
 
 		if time != 0:
 			i = 0
